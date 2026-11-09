@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartMarket</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+    <button class="botao-carrinho" onclick="abrirCarrinho()">
+        🛒
+        <span id="contadorCarrinho">0</span>
+    </button>
+
+    <h1>SmartMarket</h1>
+    <button id="botaoTema" onclick="alternarTema()">
+    🌙 Modo escuro
+</button>
+    <p>Seu supermercado mais inteligente!</p>
+</header>
+
+    <main>
+        <div id="modalCarrinho" class="modal">
+    <div class="modal-conteudo">
+
+        <button class="fechar-carrinho" onclick="fecharCarrinho()">×</button>
+
+        <section class="lista-compras">
+            <h2>Minha lista de compras</h2>
+
+            <div id="itensLista"></div>
+
+            <h3 id="totalCompra">Total: R$ 0,00</h3>
+        </section>
+
+    </div>
+</div>
+<div class="campo-busca">
+    <input
+        type="text"
+        id="campoPesquisa"
+        placeholder="Buscar produto..."
+    >
+    <button onclick="filtrarProdutos()" type="button">
+        🔍
+    </button>
+</div>
+        <select id="filtroSetor">
+    <option value="">Todos os setores</option>
+    <option value="Mercearia">Mercearia</option>
+    <option value="Laticínios">Laticínios</option>
+    <option value="Hortifruti">Hortifruti</option>
+    <option value="Limpeza">Limpeza</option>
+    <option value="Bebidas">Bebidas</option>
+        </select>
+        <section class="mapa-mercado">
+    <h2>Mapa do supermercado</h2>
+    <p>Escolha um corredor para localizar os produtos.</p>
+
+    <div class="grade-mapa">
+        <button class="corredor" onclick="filtrarCorredor('01')">
+            <strong>Corredor 01</strong>
+            <span>Café</span>
+        </button>
+
+        <button class="corredor" onclick="filtrarCorredor('02')">
+            <strong>Corredor 02</strong>
+            <span>Arroz e feijão</span>
+        </button>
+
+        <button class="corredor" onclick="filtrarCorredor('03')">
+            <strong>Corredor 03</strong>
+            <span>Leite, queijo e óleo</span>
+        </button>
+
+        <button class="corredor" onclick="filtrarCorredor('04')">
+            <strong>Corredor 04</strong>
+            <span>Hortifruti</span>
+        </button>
+
+        <button class="corredor" onclick="filtrarCorredor('05')">
+            <strong>Corredor 05</strong>
+            <span>Limpeza</span>
+        </button>
+
+        <button class="corredor" onclick="filtrarCorredor('06')">
+            <strong>Corredor 06</strong>
+            <span>Bebidas</span>
+        </button>
+    </div>
+</section>
+        <section class="comparacao-precos">
+    <h2>Comparação de preços</h2>
+    <p>Compare os produtos pelo preço por kg ou litro.</p>
+    <div id="resultadoComparacao"></div>
+</section>
+        <section class="produtos">
+            <h2>Produtos disponíveis</h2>
+            <div id="listaProdutos"></div>
+            
+            <div id="modalProduto" class="modal">
+    <div class="modal-conteudo">
+        <span class="fechar" onclick="fecharModal()">&times;</span>
+        <h2 id="nomeProduto"></h2>
+        <img id="imagemProduto" src="" alt="Imagem do produto">
+
+         <p id="nutricaoProduto"></p>
+         <div class="informacoes-nutricionais" id="blocoNutricao">
+    <h3>Informações nutricionais</h3>
+    <p id="porcaoProduto"></p>
+    <p id="caloriasProduto"></p>
+    <p id="carboidratosProduto"></p>
+    <p id="proteinasProduto"></p>
+    <p id="gordurasProduto"></p>
+    <p id="sodioProduto"></p>
+    <p id="acucaresProduto"></p>
+<p id="acucaresAdicionadosProduto"></p>
+<p id="gordurasSaturadasProduto"></p>
+<p id="gordurasTransProduto"></p>
+<p id="fibrasProduto"></p>
+<p id="calcioProduto"></p>
+<p id="magnesioProduto"></p>
+<p id="fosforoProduto"></p>
+<p id="cafeinaProduto"></p>
+    </div>
+         <p id="alergenicosProduto"></p>
+        <p id="categoriaProduto"></p>
+        <p id="corredorProduto"></p>
+        <p id="prateleiraProduto"></p>
+        <h3 id="precoProduto"></h3>
+        <p id="precoMedidaProduto"></p>
+        <div id="sugestoesProdutos"></div>
+
+    </div>
+</div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
